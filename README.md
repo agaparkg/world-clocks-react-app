@@ -1,9 +1,11 @@
-World Clocks
-Definition
-Create a page where people can add clocks from different time zones.
-Use https://momentjs.com/timezone/ to get time zones and names.
-Styling and improvements are always welcome.
-Example project you can find in this link: https://w-clocks.netlify.app/
-If any questions i will be online on Zoom/Slack. Ulan
+World Clocks - What time is it anywhere in the world?
 
+Definition:
+
+This is a React web app where people can add clocks from different time zones.
+
+Time zones and names info are taken from the following link:
+https://momentjs.com/timezone/
+
+Note: Don't forget to install the following package:
 $ npm install moment-timezone --save

@@ -9,3 +9,5 @@ https://momentjs.com/timezone/
 
 Note: Don't forget to install the following package:
 $ npm install moment-timezone --save
+
+This web app can also be reached at: https://world-clocks-react-app.herokuapp.com/

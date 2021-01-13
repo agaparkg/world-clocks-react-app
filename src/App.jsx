@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment-timezone";
+import Header from "./components/Header.jsx";
+import Main from "./components/Main.jsx";
 import "./App.css";
 
 export default class App extends Component {
@@ -10,7 +12,7 @@ export default class App extends Component {
       selectedTZName: "",
       selectedTZTime: "",
       listOfSelectedTZ: [],
-      warning: false
+      warning: false,
     };
   }
 
@@ -25,7 +27,7 @@ export default class App extends Component {
       item.zoneTime = moment().tz(item.zoneName).format("hh:mm:ss A");
     });
     this.setState({
-      listOfSelectedTZ: newList
+      listOfSelectedTZ: newList,
     });
   }
 
@@ -38,7 +40,7 @@ export default class App extends Component {
       listOfSelectedTZ,
       selectedTZName,
       timeZones,
-      selectedTZTime
+      selectedTZTime,
     } = this.state;
     const tzIndex = timeZones.indexOf(selectedTZName);
     const selectedTZIndex = listOfSelectedTZ.findIndex(
@@ -60,7 +62,7 @@ export default class App extends Component {
     if (e.target.value !== "- Select a timezone -") {
       this.setState({
         selectedTZTime: moment().tz(e.target.value).format("hh:mm:ss A"),
-        selectedTZName: e.target.value
+        selectedTZName: e.target.value,
       });
     }
   };
@@ -76,44 +78,14 @@ export default class App extends Component {
     const { timeZones, listOfSelectedTZ } = this.state;
     return (
       <div className="App">
-        <header>
-          <h1>World</h1>
-          <img
-            src="https://freefrontend.com/assets/img/css-clocks/analog-clock.gif"
-            alt=""
-          />
-          <h1>Clocks</h1>
-        </header>
-        <main>
-          <aside>
-            <div className="add-clock-box">
-              <button onClick={this.handleAddClick}>Add Clock</button>
-              <select
-                onChange={this.handleSelectChange}
-                name="timezone"
-                id="timezone"
-              >
-                <option>- Select a timezone -</option>;
-                {timeZones.map((zone, ind) => {
-                  return <option key={ind}>{zone}</option>;
-                })}
-              </select>
-            </div>
-          </aside>
-          <section>
-            {listOfSelectedTZ.map((tzBox, ind) => {
-              return (
-                <div key={ind} className="single-timezone">
-                  <span onClick={() => this.handleTXBoxRemove(tzBox.id)}>
-                    X
-                  </span>
-                  <h3 className="single-clock">{tzBox.zoneName}</h3>
-                  <div>{tzBox.zoneTime}</div>
-                </div>
-              );
-            })}
-          </section>
-        </main>
+        <Header />
+        <Main
+          handleAddClick={this.handleAddClick}
+          handleSelectChange={this.handleSelectChange}
+          handleTXBoxRemove={this.handleTXBoxRemove}
+          timeZones={timeZones}
+          listOfSelectedTZ={listOfSelectedTZ}
+        />
       </div>
     );
   }

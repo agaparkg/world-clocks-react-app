@@ -1,4 +1,4 @@
-## World Clocks - What time is it anywhere in the world?
+## World Clocks - Check the local time anywhere in the world
 
 ![Output](world-clocks.png)
 
@@ -8,14 +8,12 @@
 
 ### Time zones and names info are taken from the following link:
 
-Time zones and names info are taken from the following link:
-
 https://momentjs.com/timezone/
 
 ### Note: Don't forget to install the following package:
 
 $ npm install moment-timezone --save
 
-## Deployment
+### Deployment
 
-This React App has been deployed to Heroku: [Click here](https://world-clocks-react-app.herokuapp.com/) to see the UI output in Heroku.
+This React App has been deployed to AWS Amplify: [Click here to open](https://main.d1fgkv8kdgsh34.amplifyapp.com/) to see the UI.

@@ -1,6 +1,6 @@
 ## World Clocks - Check the local time anywhere in the world
 
-![Output](world-clocks.png)
+![Output](./src/images/world-clocks.png)
 
 ## Definition:
 
